@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="#ffcccccc"
+  android:layout_width="wrap_content"
+  android:orientation="vertical" android:layout_height="fill_parent">
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="#ffcccccc"
+  android:layout_width="wrap_content"
+  android:orientation="vertical" android:layout_height="fill_parent">
+
+<LinearLayout
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal" android:paddingTop="10px">
+  
+<LinearLayout 
+  android:layout_width="240px"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal">
+  
+<Button 
+android:text="+"
+android:id="@+id/btnajout" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent">
+</Button>
+
+</LinearLayout>
+
+<LinearLayout android:layout_width="240px"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal">
+<Button
+android:text="Clear All"
+android:id="@+id/btnclearall" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent">
+</Button>
+</LinearLayout>
+
+</LinearLayout>
+<LinearLayout android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal">
+
+<GridView
+    android:id="@+id/gridview"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:numColumns="4"
+    android:columnWidth="80px"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+    android:horizontalSpacing="1dp"
+    android:verticalSpacing="1dp">
+    </GridView>
+</LinearLayout>
+
+<LinearLayout android:id="@+id/LinearLayout01"
+ android:layout_width="wrap_content" 
+ android:layout_height="wrap_content" android:paddingLeft="15px">
+
+ <Button android:text="Moyenne"
+  android:id="@+id/btnmoyenne" 
+  android:layout_width="wrap_content" 
+  android:layout_height="wrap_content">
+  </Button>
+  <Button android:text="Ecart type" 
+  android:id="@+id/btnecarttype" 
+  android:layout_width="wrap_content" 
+  android:layout_height="wrap_content">
+  </Button>
+  <Button android:text="Mode" 
+  android:id="@+id/btnmode" 
+  android:layout_width="wrap_content" 
+  android:layout_height="wrap_content">
+  </Button>
+  <Button android:text="Médiane" 
+  android:id="@+id/btnmediane" 
+  android:layout_width="wrap_content" 
+  android:layout_height="wrap_content">
+  </Button>
+  </LinearLayout>
+
+
+
+
+<TextView
+ android:text=""
+ android:textColor="#ff333333"
+ android:id="@+id/tvResultatstat" 
+ android:layout_width="wrap_content" 
+ android:layout_height="wrap_content">
+ </TextView>
+</LinearLayout>
+
+</LinearLayout>
