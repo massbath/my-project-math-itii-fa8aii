@@ -91,7 +91,7 @@ public class menu_cours extends Activity implements OnItemClickListener
     			{
     		
     		 //  Resources test = context.openFileInput("res/raw/test.pdf");
-    	     	
+    	     	Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
     	     	File file = new File("test");
     			//Toast.makeText(this, file.toString(), Toast.LENGTH_SHORT).show();
                 if (file.exists()) {
