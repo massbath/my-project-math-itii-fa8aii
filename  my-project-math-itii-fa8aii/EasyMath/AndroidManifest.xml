@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.projet_math"
+      android:versionCode="1"
+      android:versionName="1.0"
+     >
+    <application android:icon="@drawable/icon" android:label="EasyMath"> 
+        <activity android:name="menu_principal"
+                  android:label="EasyMath"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="outils_math"
+        android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+         <activity android:name="menu_cours"
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:windowSoftInputMode="adjustResize">
+        	<intent-filter>
+        		<action android:name="android.intent.action.VIEW"/>
+     			<data android:scheme="http" android:mimeType="application/pdf"/>
+     			<category android:name="android.intent.category.DEFAULT"/>
+  				<category android:name="android.intent.category.BROWSABLE"/>
+      		</intent-filter>
+        </activity>
+        <activity android:name="calculatrice"
+        android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity android:name="equation"
+        android:theme="@android:style/Theme.NoTitleBar"
+        >
+        </activity>
+        <activity android:name="second_degre"
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name="troisieme_degre"
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name="statistique"
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:windowSoftInputMode="adjustResize">
+        </activity>
+        
+        
+
+    </application>
+    <uses-sdk android:minSdkVersion="8" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest> 
