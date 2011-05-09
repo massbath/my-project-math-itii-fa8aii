@@ -19,12 +19,6 @@
          <activity android:name="menu_cours"
         android:theme="@android:style/Theme.NoTitleBar"
         android:windowSoftInputMode="adjustResize">
-        	<intent-filter>
-        		<action android:name="android.intent.action.VIEW"/>
-     			<data android:scheme="http" android:mimeType="application/pdf"/>
-     			<category android:name="android.intent.category.DEFAULT"/>
-  				<category android:name="android.intent.category.BROWSABLE"/>
-      		</intent-filter>
         </activity>
         <activity android:name="calculatrice"
         android:theme="@android:style/Theme.NoTitleBar">
@@ -45,11 +39,14 @@
         android:theme="@android:style/Theme.NoTitleBar"
         android:windowSoftInputMode="adjustResize">
         </activity>
-        
-        
+       <activity android:name="navigator"
+       android:theme="@android:style/Theme.NoTitleBar"
+       android:windowSoftInputMode="adjustResize"
+       ></activity>
 
     </application>
     <uses-sdk android:minSdkVersion="8" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.INTERNET" />
 
 </manifest> 

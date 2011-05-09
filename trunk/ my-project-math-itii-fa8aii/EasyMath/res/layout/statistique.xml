@@ -9,6 +9,9 @@
   android:background="#ffcccccc"
   android:layout_width="wrap_content"
   android:orientation="vertical" android:layout_height="fill_parent">
+    <LinearLayout android:layout_width="wrap_content" android:id="@+id/linearLayout1" android:orientation="horizontal" android:layout_height="wrap_content">
+        <GridView android:stretchMode="columnWidth" android:layout_width="fill_parent" android:gravity="center" android:id="@+id/gridview" android:horizontalSpacing="1dp" android:verticalSpacing="1dp" android:columnWidth="80px" android:layout_height="fill_parent" android:numColumns="4"></GridView>
+    </LinearLayout>
 
 <LinearLayout
   android:layout_width="wrap_content"
@@ -40,22 +43,6 @@ android:layout_height="fill_parent">
 </Button>
 </LinearLayout>
 
-</LinearLayout>
-<LinearLayout android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:orientation="horizontal">
-
-<GridView
-    android:id="@+id/gridview"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:numColumns="4"
-    android:columnWidth="80px"
-    android:stretchMode="columnWidth"
-    android:gravity="center"
-    android:horizontalSpacing="1dp"
-    android:verticalSpacing="1dp">
-    </GridView>
 </LinearLayout>
 
 <LinearLayout android:id="@+id/LinearLayout01"
