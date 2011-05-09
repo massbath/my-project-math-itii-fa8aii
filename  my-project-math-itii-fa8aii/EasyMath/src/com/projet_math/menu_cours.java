@@ -1,12 +1,14 @@
 package com.projet_math;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -89,28 +91,20 @@ public class menu_cours extends Activity implements OnItemClickListener
     		//Intent intent=null;
     		if(map.get("titre").equals("Suites"))
     			{
-    		
-    		 //  Resources test = context.openFileInput("res/raw/test.pdf");
-    	     	Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
-    	     	File file = new File("test");
-    			//Toast.makeText(this, file.toString(), Toast.LENGTH_SHORT).show();
-                if (file.exists()) {
-                    Uri path = Uri.fromFile(file);
-                	
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setDataAndType(path, "application/pdf");
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                    try {
-                    	Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
-                        startActivity(intent);
-                    } 
-                    catch (ActivityNotFoundException e) {
-                        Toast.makeText(this, "Aucun application disponible pour lire les PDF", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else Toast.makeText(this, "le fichier n'existe pas ...", Toast.LENGTH_SHORT).show();
-    			}
+    			
+    			/*Uri uri = Uri.parse("http://www.example.com");
+    			 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+    			 startActivity(intent);*/
+    			/*  Uri path = Uri.parse("android.resource://com.projet_math/raw/test")  ;
+    			  Intent intent = new Intent(Intent.ACTION_VIEW);
+                  intent.setDataAndType(path, "application/pdf");
+                  intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                 // startActivity(intent);*/
+    	     	Intent intent = new Intent(this,navigator.class);
+    	     	startActivity(intent);
+               // Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
+    	     	
+    	     	}
     		
     		if(map.get("titre").equals("Matrice"))
 				{
