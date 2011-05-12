@@ -15,11 +15,10 @@ public class second_degre extends Activity
 	EditText x0;
 	EditText constante;
 	Button btnresoudre;
-	TextView solution1;
-	TextView solution2;
+	TextView solution;
 	float delta;
 	float a,b,c,d;
-	float sol1,sol2;
+	float sol1,sol2,sol;
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) 
@@ -32,8 +31,8 @@ public class second_degre extends Activity
         x0=(EditText)findViewById(R.id.eTx0);
         constante=(EditText)findViewById(R.id.eTconstante);
         btnresoudre=(Button)findViewById(R.id.btnresolution);
-        solution1=(TextView)findViewById(R.id.tVsolution1);
-        solution2=(TextView)findViewById(R.id.tVsolution2);
+        solution=(TextView)findViewById(R.id.tVsolution1);
+       
        
        btnresoudre.setOnClickListener(new View.OnClickListener() {
        	public void onClick(View v) {
@@ -53,30 +52,40 @@ public class second_degre extends Activity
     d=Float.parseFloat(constante.getText().toString());
     
     c=c-d;
+    
+    if((a==0) && (b!=0))
+    {
+    sol=-c/b;
+    solution.setText("L'unique solution est : "+String.valueOf(sol));
+    	
+    }
+    else if((a==0) && (b==0)) solution.setText("Impossible");
+    
+    else{	
     delta =(b*b)-4*(a*c);
     
     
 	    if(delta==0)
 		    {
 		    sol1=(-b)/(2*a);
-		   	solution1.setText("La seule solution est " + String.valueOf(sol1));
+		   	solution.setText("La seule solution est " + String.valueOf(sol1));
 		    }
     	if(delta>0)
 	    	{
 	    	sol1=(float) (-b+(Math.sqrt((double)(delta/(2*a)))));	
 	    	sol2=(float) (-b-(Math.sqrt((double)(delta/(2*a)))));
-	    	solution1.setText("La première solution est "+ String.valueOf(sol1)+"\n"+"La seconde solution est " + String.valueOf(sol2));
+	    	solution.setText("La première solution est "+ String.valueOf(sol1)+"\n"+"La seconde solution est " + String.valueOf(sol2));
 	    	
 	    	}
     	else
     		{
     		sol1=(float) (-b+(Math.sqrt((double)(delta/(2*a)))));	
         	sol2=(float) (-b-(Math.sqrt((double)(delta/(2*a)))));
-        	solution1.setText("La première solution est "+ String.valueOf(sol1)+"i"+"\n"+"La seconde solution est " + String.valueOf(sol2)+"i");
+        	solution.setText("La première solution est "+ String.valueOf(sol1)+"i"+"\n"+"La seconde solution est " + String.valueOf(sol2)+"i");
         
     		}
    
     }
-    
+    }
     
     }

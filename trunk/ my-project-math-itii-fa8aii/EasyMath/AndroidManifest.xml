@@ -17,8 +17,7 @@
         android:theme="@android:style/Theme.NoTitleBar">
         </activity>
          <activity android:name="menu_cours"
-        android:theme="@android:style/Theme.NoTitleBar"
-        android:windowSoftInputMode="adjustResize">
+        android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         <activity android:name="calculatrice"
         android:theme="@android:style/Theme.NoTitleBar">

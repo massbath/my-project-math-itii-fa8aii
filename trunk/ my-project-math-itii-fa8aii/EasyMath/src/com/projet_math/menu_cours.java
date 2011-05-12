@@ -1,15 +1,10 @@
 package com.projet_math;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -91,18 +86,13 @@ public class menu_cours extends Activity implements OnItemClickListener
     		//Intent intent=null;
     		if(map.get("titre").equals("Suites"))
     			{
+    			Bundle urlToOpen = new Bundle();
     			
-    			/*Uri uri = Uri.parse("http://www.example.com");
-    			 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-    			 startActivity(intent);*/
-    			/*  Uri path = Uri.parse("android.resource://com.projet_math/raw/test")  ;
-    			  Intent intent = new Intent(Intent.ACTION_VIEW);
-                  intent.setDataAndType(path, "application/pdf");
-                  intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                 // startActivity(intent);*/
-    	     	Intent intent = new Intent(this,navigator.class);
+    			urlToOpen.putString("url","https://docs.google.com/document/d/1_u9f6mCX6NX2chtPJKF2sqgnKPPboAN77R7w-zX9uCU/edit?hl=en&authkey=COPeufQN");
+    			
+    	       Intent intent = new Intent(this,navigator.class);
+    	       intent.putExtras(urlToOpen);
     	     	startActivity(intent);
-               // Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
     	     	
     	     	}
     		
