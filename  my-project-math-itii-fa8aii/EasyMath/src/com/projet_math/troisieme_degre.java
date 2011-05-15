@@ -18,8 +18,8 @@ public class troisieme_degre extends Activity {
 	EditText x0;
 	EditText constante;
 	Button btnresoudre;
-	TextView solution1;
-	TextView solution2;
+	TextView solution;
+	
 	
 	float delta;
 	float a,b,c,d,e;
@@ -35,8 +35,8 @@ public class troisieme_degre extends Activity {
         x0=(EditText)findViewById(R.id.eTx0);
         constante=(EditText)findViewById(R.id.eTconstante);
         btnresoudre=(Button)findViewById(R.id.btnresolution);
-        solution1=(TextView)findViewById(R.id.tVsolution1);
-        solution2=(TextView)findViewById(R.id.tVsolution2);
+        solution=(TextView)findViewById(R.id.tVsolution1);
+        
         
         btnresoudre.setOnClickListener(new View.OnClickListener() {
        	public void onClick(View v) {
@@ -53,10 +53,10 @@ public class troisieme_degre extends Activity {
     
     private void resolution()
     {
-    	solution1.setText("");
-    	solution2.setText("");
+    	solution.setText("");
     	
-    	float p,k,q,gDelta,m,n,u,v,x,y,re,im,theta,z;
+    	
+    	float p,k,q,gDelta,m,n,u,v,x,y,re,im,theta,z,sol;
     	
     	    
     	    a=Float.parseFloat(x3.getText().toString());
@@ -66,6 +66,45 @@ public class troisieme_degre extends Activity {
     	    e=Float.parseFloat(constante.getText().toString());
     	    d=d-e;
     	    
+    	    
+    	    if(a==0)
+    	    {
+    	    	 if((b==0) && (c!=0))
+    	    	    {
+    	    	    sol=-d/c;
+    	    	    solution.setText("L'unique solution est : "+String.valueOf(sol));
+    	    	    	
+    	    	    }
+    	    	    else if((b==0) && (c==0)) solution.setText("Impossible");
+    	    	    
+    	    	    else{	
+    	    	    delta =(c*c)-4*(b*d);
+    	    	    
+    	    	    
+    	    		    if(delta==0)
+    	    			    {
+    	    			    sol1=(-c)/(2*b);
+    	    			   	solution.setText("La seule solution est " + String.valueOf(sol1));
+    	    			    }
+    	    	    	if(delta>0)
+    	    		    	{
+    	    		    	sol1=(float) (-c+(Math.sqrt((double)(delta/(2*b)))));	
+    	    		    	sol2=(float) (-c-(Math.sqrt((double)(delta/(2*b)))));
+    	    		    	solution.setText("La première solution est "+ String.valueOf(sol1)+"\n"+"La seconde solution est " + String.valueOf(sol2));
+    	    		    	
+    	    		    	}
+    	    	    	else
+    	    	    		{
+    	    	    		sol1=(float) (-c+(Math.sqrt((double)(delta/(2*b)))));	
+    	    	        	sol2=(float) (-c-(Math.sqrt((double)(delta/(2*b)))));
+    	    	        	solution.setText("La première solution est "+ String.valueOf(sol1)+"i"+"\n"+"La seconde solution est " + String.valueOf(sol2)+"i");
+    	    	        
+    	    	    		}
+    	    	   
+    	    	    }
+    	    	    }	
+    	    else 
+    	    {	
     	    p=(float)((c/a)-(Math.pow(b, 2.0)/(3*Math.pow(a, 2.0))));
 			q=(float) (((2*Math.pow(b, 3.0))/(27*Math.pow(a, 3.0)))-((b*c)/(3*Math.pow(a, 2.0)))+(d/a));
 			gDelta=(float) (4*Math.pow(p, 3.0)+27*Math.pow(q, 2.0));
@@ -85,7 +124,7 @@ public class troisieme_degre extends Activity {
 		  			  im=(float) ((Math.sqrt(3)/2)*(u-v));
 		  			  re+=(-b)/(3*a);
 		  			  //3 solutions
-		  			  solution1.setText("Il y a une racine réelle: " +x+"\n"+"Il y a deux racines complexes: \n"+"y = "+re+"-"+im+"i ,\n z  = "+re+"+"+im+"i");
+		  			  solution.setText("Il y a une racine réelle: " +x+"\n"+"Il y a deux racines complexes: \n"+"y = "+re+"-"+im+"i ,\n z  = "+re+"+"+im+"i");
 		  			  
 		  			 	  
 		  		  }
@@ -93,14 +132,14 @@ public class troisieme_degre extends Activity {
 						{
 						  
 						  if(b==0 && c==0 && d==0)
-							  solution1.setText("Il y a une racine réelle de multiplicité 3 :x=y=z=0");
+							  solution.setText("Il y a une racine réelle de multiplicité 3 :x=y=z=0");
 						  else
 							  {
 								x=(3*q)/p;
 								x+=(-b)/(3*a);
 								y=(-3*q)/(2*p);
 								y+=(-b)/(3*a);
-								solution1.setText("Il y a une racine réelle simple:"+" "+x+"\n"+"Il y a une racine réelle double y = z="+" "+y);
+								solution.setText("Il y a une racine réelle simple:"+" "+x+"\n"+"Il y a une racine réelle double y = z="+" "+y);
 								
 							  }
 							
@@ -116,10 +155,10 @@ public class troisieme_degre extends Activity {
   			  x+=(-c)/(3*b);
   			  y+=(-c)/(3*b);
   			  z+=(-c)/(3*b);
-  			  solution1.setText("Il y a 3 racines réelles "+x+" \n"+" "+ y +"\n" +z);
+  			  solution.setText("Il y a 3 racines réelles "+x+" \n"+" "+ y +"\n" +z);
   			
   			   
   		  }
-     		
+    	}		
     }
 }
