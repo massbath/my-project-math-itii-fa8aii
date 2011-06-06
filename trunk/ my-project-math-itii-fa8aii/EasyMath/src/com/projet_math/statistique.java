@@ -83,7 +83,7 @@ public class statistique extends Activity implements OnClickListener, OnItemClic
 	@Override
 	public void onClick(View v) 
 	{
-		if(v==ajout)//si on clique sur le bouton ajou
+		if(v==ajout)//si on clique sur le bouton ajout
 			{
 			//on transforme le layout alertdialogsaisievaleur pour en créer une vue qui sera la vue de l'alertdialog
 		    LayoutInflater factory = LayoutInflater.from(this);
