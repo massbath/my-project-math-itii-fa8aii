@@ -49,21 +49,29 @@ android:layout_height="fill_parent">
 
 </LinearLayout>
 
-<LinearLayout android:id="@+id/LinearLayout01"
+<LinearLayout
+android:paddingTop="10px"
+ android:id="@+id/LinearLayout01"
  android:layout_width="wrap_content" 
  android:layout_height="wrap_content" android:paddingLeft="15px">
 
- <Button android:text="Afficher le graphe"
+ <Button android:text="Resultat"
   android:id="@+id/btnresultat" 
   android:layout_width="wrap_content" 
   android:layout_height="wrap_content">
   </Button>
  
   </LinearLayout>
+<TextView android:text=""
+android:textSize="30px"
+ android:textColor="#ff333333"
+ android:id="@+id/tvResultat" 
+ android:layout_width="wrap_content" 
+ android:layout_height="wrap_content"
+ android:layout_gravity="center_horizontal">
 
 
-
-
+</TextView>
 </LinearLayout>
 
 </LinearLayout>

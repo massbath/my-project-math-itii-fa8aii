@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.ContentProviderOperation.Builder;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -26,7 +26,7 @@ Button Add;
 Button clear;
 ArrayList<Float> tableau;
 GridView Grid;
-
+TextView AffichageResultat;
 //les deux arrayList une pour les valeur et l'autre pour les fréquence associées à ces valeurs
 ArrayList<Float>freq;
 ArrayList<Float>valeur;
@@ -42,6 +42,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	Add=(Button)findViewById(R.id.btnajouter);
 	clear=(Button)findViewById(R.id.btntoutsupprimer);
 	Grid=(GridView)findViewById(R.id.gridview);
+	AffichageResultat=(TextView)findViewById(R.id.tvResultat);
 	
 	//on active les clics sur les boutons et sur les items du gridview
 	Resultat.setOnClickListener(this);
@@ -234,28 +235,12 @@ public void rafraichir_liste()
 //fonction servant à afficher un graphique dans une webview avec comme données les fréquences de chaque valeur du tableau
 public void afficher_graph()
 {
-/*tab_freq = new Float[tableau.size()][2];
-Float valeur,frequence;
-String resultat="";
-
-for(int i=1;i<tableau.size()-1;i++)
-	{
-	if(tab_freq.length > 0)
-	{	
-		if(isAlready(tableau.get(i))==false)
-			{
-			tab_freq[i][0]=tableau.get(i);
-			tab_freq[i][1]=new Float(frequence(tableau.get(i)));		
-			}		
-	}
-	else
-		{
-			tab_freq[i][0]=tableau.get(i);
-			tab_freq[i][1]=new Float(frequence(tableau.get(i)));		
-		}
-	}
-*/valeur.clear();
-  freq.clear();
+    valeur=new ArrayList();
+    freq=new ArrayList();
+    
+    String test="";
+	valeur.clear();
+    freq.clear();
 	for(int i= 0;i < tableau.size();i++)
 	{
 	if(valeur.isEmpty())
@@ -270,6 +255,20 @@ for(int i=1;i<tableau.size()-1;i++)
 		freq.add(new Float(frequence(tableau.get(i))));
 		}
 	}
+	affichage();
+}
+
+public void affichage()
+{
+	String test="Valeur"+"		"+"|"+"		"+"Fréquence\n";
+	for(int j=0;j < valeur.size();j++)
+	{
+		
+		test+=valeur.get(j).toString()+"		"+"|"+"		"+freq.get(j).intValue()+"/"+tableau.size()+"\n";
+		
+	}
+	AffichageResultat.setText(test);
+	//Toast.makeText(this, test, Toast.LENGTH_LONG).show();
 }
 
 //fonction permettant de savoir si une valeur est déja présente dans le tableau de frequence
