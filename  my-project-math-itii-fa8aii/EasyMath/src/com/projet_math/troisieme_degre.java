@@ -21,9 +21,9 @@ public class troisieme_degre extends Activity {
 	TextView solution;
 	
 	
-	float delta;
-	float a,b,c,d,e;
-	float sol1,sol2;
+	double delta;
+	double a,b,c,d,e;
+	double sol1,sol2;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,14 +56,14 @@ public class troisieme_degre extends Activity {
     	solution.setText("");
     	
     	
-    	float p,k,q,gDelta,m,n,u,v,x,y,re,im,theta,z,sol;
+    	double p,k,q,gDelta,m,n,u,v,x,y,re,im,theta,z,sol;
     	
     	    
-    	    a=Float.parseFloat(x3.getText().toString());
-    	    b=Float.parseFloat(x2.getText().toString());
-    	    c=Float.parseFloat(x1.getText().toString());
-    	    d=Float.parseFloat(x0.getText().toString());
-    	    e=Float.parseFloat(constante.getText().toString());
+    	    a=Double.valueOf(x3.getText().toString());
+    	    b=Double.valueOf(x2.getText().toString());
+    	    c=Double.valueOf(x1.getText().toString());
+    	    d=Double.valueOf(x0.getText().toString());
+    	    e=Double.valueOf(constante.getText().toString());
     	    d=d-e;
     	    
     	    
@@ -88,32 +88,33 @@ public class troisieme_degre extends Activity {
     	    			    }
     	    	    	if(delta>0)
     	    		    	{
-    	    		    	sol1=(float) (-c+(Math.sqrt((double)(delta/(2*b)))));	
-    	    		    	sol2=(float) (-c-(Math.sqrt((double)(delta/(2*b)))));
+    	    		    	sol1= (-c+(Math.sqrt((double)(delta/(2*b)))));	
+    	    		    	sol2= (-c-(Math.sqrt((double)(delta/(2*b)))));
     	    		    	solution.setText("La premire solution est "+ String.valueOf(sol1)+"\n"+"La seconde solution est " + String.valueOf(sol2));
     	    		    	
     	    		    	}
     	    	    	else
     	    	    		{
-    	    	    		sol1=(float) (-c+(Math.sqrt((double)(delta/(2*b)))));	
-    	    	        	sol2=(float) (-c-(Math.sqrt((double)(delta/(2*b)))));
+    	    	    		sol1=(-c+(Math.sqrt((double)(delta/(2*b)))));	
+    	    	        	sol2=(-c-(Math.sqrt((double)(delta/(2*b)))));
     	    	        	solution.setText("La premire solution est "+ String.valueOf(sol1)+"i"+"\n"+"La seconde solution est " + String.valueOf(sol2)+"i");
     	    	        
     	    	    		}
     	    	   
     	    	    }
-    	    	    }	
+    	    }	
     	    else 
     	    {	
-    	    p=(float)((c/a)-(Math.pow(b, 2.0)/(3*Math.pow(a, 2.0))));
-			q=(float) (((2*Math.pow(b, 3.0))/(27*Math.pow(a, 3.0)))-((b*c)/(3*Math.pow(a, 2.0)))+(d/a));
-			gDelta=(float) (4*Math.pow(p, 3.0)+27*Math.pow(q, 2.0));
-     		m=(float) (((-q)/2)+(0.5)*Math.sqrt(gDelta/27));
-     		n=(float) (((-q)/2)-(0.5)*Math.sqrt(gDelta/27));
+    	    p=(c/a)-(Math.pow(b, 2.0)/(3*Math.pow(a, 2.0)));
+			q= (((2*Math.pow(b, 3.0))/(27*Math.pow(a, 3.0)))-((b*c)/(3*Math.pow(a, 2.0)))+(d/a));
+			gDelta= 4*Math.pow(p, 3.0)+27*Math.pow(q, 2.0);
+     		m= ((-q)/2)+(0.5)*Math.sqrt(gDelta/27);
+     		n= ((-q)/2)-(0.5)*Math.sqrt(gDelta/27);
     	    
-     		u=(float) Math.pow(Math.abs(m), 1.0/3);
-     		v=(float) Math.pow(Math.abs(n), 1.0/3);
-    	    
+     		u= Math.pow(Math.abs(m), 1.0/3);
+     		v= Math.pow(Math.abs(n), 1.0/3);
+     		
+    	    Toast.makeText(this, String.valueOf(gDelta), Toast.LENGTH_SHORT).show();
      		if(gDelta>0)
 		  		  {
 		  			  if (m<0) u=-u;
@@ -132,7 +133,7 @@ public class troisieme_degre extends Activity {
 						{
 						  
 						  if(b==0 && c==0 && d==0)
-							  solution.setText("Il y a une racine rŽelle de multiplicitŽ 3 :x=y=z=0");
+							  solution.setText("Il y a une racine rŽelle de multiplicitŽ 3 :x = y = z = 0");
 						  else
 							  {
 								x=(3*q)/p;
@@ -145,12 +146,12 @@ public class troisieme_degre extends Activity {
 							
 						}
      		else
-  		  {
-  			  k=  (float) ((3*q)/((2*p)*Math.sqrt((-p)/3)));               
-  			  theta=(float) Math.acos(k);
-  			  x= (float) (2*Math.sqrt((-p)/3)*Math.cos(theta/3));
-  			  y= (float) (2*Math.sqrt((-p)/3)*Math.cos((theta+2*Math.PI)/3));
-  			  z= (float) (2*Math.sqrt((-p)/3)*Math.cos((theta+4*Math.PI)/3));
+  		    {
+  			  k = ((3*q)/((2*p)*Math.sqrt((-p)/3)));               
+  			  theta = Math.acos(k);
+  			  x =  (2*Math.sqrt((-p)/3)*Math.cos(theta/3));
+  			  y =  (2*Math.sqrt((-p)/3)*Math.cos((theta+2*Math.PI)/3));
+  			  z =  (2*Math.sqrt((-p)/3)*Math.cos((theta+4*Math.PI)/3));
  
   			  x+=(-c)/(3*b);
   			  y+=(-c)/(3*b);

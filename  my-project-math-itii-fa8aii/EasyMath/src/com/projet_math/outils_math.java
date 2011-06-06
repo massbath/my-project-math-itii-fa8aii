@@ -115,7 +115,9 @@ public class outils_math extends Activity implements OnItemClickListener {
     		if(map.get("titre").equals("Variable aléatoire"))
 				{
     			
-    			Toast.makeText(outils_math.this,map.get("titre"), Toast.LENGTH_LONG).show();
+    			//Toast.makeText(outils_math.this,map.get("titre"), Toast.LENGTH_LONG).show();
+				intent=new Intent(outils_math.this,variable_aleatoire.class);
+				startActivity(intent);
 				}
     		
     		if(map.get("titre").equals("Probabilité"))

@@ -48,8 +48,7 @@ public class menu_cours extends Activity implements OnItemClickListener
         map = new HashMap<String, String>();
         map.put("titre", "Produit scalaire dans l’espace");
         map.put("description", "Carré scalaire, orthogonalité, vecteur normal à un plan, équation cartésienne.");
-        //voir pour l'image
-        //map.put("img", String.valueOf(R.drawable.matrice));
+        map.put("img", String.valueOf(R.drawable.scalaire));
         listItem.add(map);
  
         map = new HashMap<String, String>();
@@ -61,37 +60,37 @@ public class menu_cours extends Activity implements OnItemClickListener
         map= new HashMap<String,String>();
         map.put("titre", "Complexe");
         map.put("description", "Module , argument, différnetes écritures d'un nombre complexe, géométrie et transformations géométriques.");
-        map.put("img", String.valueOf(R.drawable.complex));//ajouter une image ..
+        map.put("img", String.valueOf(R.drawable.complex));
         listItem.add(map);
         
         map= new HashMap<String,String>();
         map.put("titre", "Primitives et intégrales");
         map.put("description", "Primitives , intégrales, inégalités, intégration par partie.");
-        //ajouter une image ..
+        map.put("img", String.valueOf(R.drawable.integral));
         listItem.add(map);
         
         map= new HashMap<String,String>();
         map.put("titre", "Dénombrement");
         map.put("description", "Listes, arrangement, permutation, combinaisons, binôme de Newton, principe fondamental du dénombrement.");
-        //ajouter une image ..
+        map.put("img", String.valueOf(R.drawable.denombrement));
         listItem.add(map);
         
         map= new HashMap<String,String>();
         map.put("titre", "Droites et plans dans l'espace");
         map.put("description", "Barycentre, droites de l'espace, intersection et équations linéaires.");
-        //ajouter une image ..
+       map.put("img", String.valueOf(R.drawable.droites));
         listItem.add(map);		
        
         map= new HashMap<String,String>();
         map.put("titre", "Exponentielles, logarithmes, puissances");
         map.put("description", "Fonctions exponentielle, logarythme, puissance, courbes représentatives, fonctions de bases associées.");
-        //ajouter une image ..
+        map.put("img", String.valueOf(R.drawable.logarythme));
         listItem.add(map);		
        
         map= new HashMap<String,String>();
         map.put("titre", "Les fonctions");
         map.put("description", "Limites , comportement asymptotique, dérivation, continuité.");
-        //ajouter une image ..
+        map.put("img", String.valueOf(R.drawable.fonction));
         listItem.add(map);
         
         

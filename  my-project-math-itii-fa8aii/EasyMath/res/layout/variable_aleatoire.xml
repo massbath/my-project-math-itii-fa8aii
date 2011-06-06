@@ -29,7 +29,7 @@
   
 <Button 
 android:text="Ajouter"
-android:id="@+id/btnajout" 
+android:id="@+id/btnajouter" 
 android:layout_width="fill_parent" 
 android:layout_height="fill_parent">
 </Button>
@@ -41,7 +41,7 @@ android:layout_height="fill_parent">
   android:orientation="horizontal">
 <Button
 android:text="Tout effacer"
-android:id="@+id/btnclearall" 
+android:id="@+id/btntoutsupprimer" 
 android:layout_width="fill_parent" 
 android:layout_height="fill_parent">
 </Button>
@@ -53,39 +53,17 @@ android:layout_height="fill_parent">
  android:layout_width="wrap_content" 
  android:layout_height="wrap_content" android:paddingLeft="15px">
 
- <Button android:text="Moyenne"
-  android:id="@+id/btnmoyenne" 
+ <Button android:text="Afficher le graphe"
+  android:id="@+id/btnresultat" 
   android:layout_width="wrap_content" 
   android:layout_height="wrap_content">
   </Button>
-  <Button android:text="Ecart type" 
-  android:id="@+id/btnecarttype" 
-  android:layout_width="wrap_content" 
-  android:layout_height="wrap_content">
-  </Button>
-  <Button android:text="Mode" 
-  android:id="@+id/btnmode" 
-  android:layout_width="wrap_content" 
-  android:layout_height="wrap_content">
-  </Button>
-  <Button android:text="Médiane" 
-  android:id="@+id/btnmediane" 
-  android:layout_width="wrap_content" 
-  android:layout_height="wrap_content">
-  </Button>
+ 
   </LinearLayout>
 
 
 
 
-<TextView
- android:text=""
- android:textColor="#ff333333"
- android:id="@+id/tvResultatstat" 
- android:layout_width="wrap_content" 
- android:layout_height="wrap_content"
- android:layout_gravity="center_horizontal">
- </TextView>
 </LinearLayout>
 
 </LinearLayout>
