@@ -59,11 +59,11 @@ public class troisieme_degre extends Activity {
     	double p,k,q,gDelta,m,n,u,v,x,y,re,im,theta,z,sol;
     	
     	    
-    	    a=Double.valueOf(x3.getText().toString());
-    	    b=Double.valueOf(x2.getText().toString());
-    	    c=Double.valueOf(x1.getText().toString());
-    	    d=Double.valueOf(x0.getText().toString());
-    	    e=Double.valueOf(constante.getText().toString());
+    	    a=Float.valueOf(x3.getText().toString());
+    	    b=Float.valueOf(x2.getText().toString());
+    	    c=Float.valueOf(x1.getText().toString());
+    	    d=Float.valueOf(x0.getText().toString());
+    	    e=Float.valueOf(constante.getText().toString());
     	    d=d-e;
     	    
     	    
@@ -105,27 +105,28 @@ public class troisieme_degre extends Activity {
     	    }	
     	    else 
     	    {	
-    	    p=(c/a)-(Math.pow(b, 2.0)/(3*Math.pow(a, 2.0)));
-			q= (((2*Math.pow(b, 3.0))/(27*Math.pow(a, 3.0)))-((b*c)/(3*Math.pow(a, 2.0)))+(d/a));
-			gDelta= 4*Math.pow(p, 3.0)+27*Math.pow(q, 2.0);
-     		m= ((-q)/2)+(0.5)*Math.sqrt(gDelta/27);
-     		n= ((-q)/2)-(0.5)*Math.sqrt(gDelta/27);
-    	    
-     		u= Math.pow(Math.abs(m), 1.0/3);
-     		v= Math.pow(Math.abs(n), 1.0/3);
+    	    	
+    	    p = (float) ( (c / a) - (Math.pow(b, 2.0) / (3 * Math.pow(a, 2.0))) );
+    		q = (float) ( ((2 * Math.pow(b, 3.0)) / (27 * Math.pow(a, 3.0))) - ((b * c) / (3 * Math.pow(a, 2.0))) + (d / a) );
+    		gDelta = (float) ( 4 * Math.pow(p, 3.0) + 27 * Math.pow(q, 2.0) );
+   			m = (float) ( ((-q) / 2) + (0.5) * Math.sqrt(gDelta / 27) );
+   			n = (float) ( ((-q) / 2) - (0.5) * Math.sqrt(gDelta / 27) );
+    			
+   			u = (float) Math.pow(Math.abs(m), 1.0 / 3);
+   			v = (float) Math.pow(Math.abs(n), 1.0 / 3);
      		
-    	    Toast.makeText(this, String.valueOf(gDelta), Toast.LENGTH_SHORT).show();
+    	    
      		if(gDelta>0)
 		  		  {
-		  			  if (m<0) u=-u;
-		  			  if (n<0) v=-v;
+		  			  if (m<0) u = -u;
+		  			  if (n<0) v = -v;
 		  			  x=u+v;
 		  			  x+=(-b)/(3*a);
 		  			  re=(-x)/2;
 		  			  im=(float) ((Math.sqrt(3)/2)*(u-v));
 		  			  re+=(-b)/(3*a);
 		  			  //3 solutions
-		  			  solution.setText("Il y a une racine rŽelle: " +x+"\n"+"Il y a deux racines complexes: \n"+"y = "+re+"-"+im+"i ,\n z  = "+re+"+"+im+"i");
+		  			  solution.setText("Il y a une racine rŽelle: " +String.format("%6f", x)+"\n"+"Il y a deux racines complexes: \n"+"y = "+String.format("%6f", re)+"-"+String.format("%6f", im)+"i ,\n z  = "+String.format("%6f", re)+"+"+String.format("%6f", im)+"i");
 		  			  
 		  			 	  
 		  		  }
@@ -140,7 +141,7 @@ public class troisieme_degre extends Activity {
 								x+=(-b)/(3*a);
 								y=(-3*q)/(2*p);
 								y+=(-b)/(3*a);
-								solution.setText("Il y a une racine rŽelle simple:"+" "+x+"\n"+"Il y a une racine rŽelle double y = z="+" "+y);
+								solution.setText("Il y a une racine rŽelle simple:"+" "+String.format("%6f", x)+"\n"+"Il y a une racine rŽelle double y = z="+" "+String.format("%6f", y));
 								
 							  }
 							
@@ -156,7 +157,7 @@ public class troisieme_degre extends Activity {
   			  x+=(-c)/(3*b);
   			  y+=(-c)/(3*b);
   			  z+=(-c)/(3*b);
-  			  solution.setText("Il y a 3 racines rŽelles "+x+" \n"+" "+ y +"\n" +z);
+  			  solution.setText("Il y a 3 racines rŽelles "+String.format("%6f", x)+" \n"+" "+String.format("%6f", y) +"\n" +String.format("%6f", z));
   			
   			   
   		  }
