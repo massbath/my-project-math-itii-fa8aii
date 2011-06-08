@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:background="#ffcccccc"
+  android:orientation="vertical">
+  
+    <Button android:text="Loi uniforme" 
+    android:id="@+id/btnuniforme"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content" android:layout_gravity="center">
+     </Button>
+     
+    <Button android:text="Loi binomiale"
+     android:id="@+id/btnbinomiale" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content" android:layout_gravity="center">
+     </Button>
+    
+    <Button android:text="Loi de poisson" 
+    android:id="@+id/btnpoisson" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" android:layout_gravity="center">
+    </Button>
+  
+  <Button android:text="Loi normal" 
+    android:id="@+id/btnnormal" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:layout_gravity="center">
+    </Button>
+    
+    <Button android:text="Test de KHI" 
+    android:id="@+id/btnkhi" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+     android:layout_gravity="center">
+    </Button>
+</LinearLayout>

@@ -203,23 +203,27 @@ public void ajouter_element(EditText a)
 	tableau.add(Float.valueOf(a.getText().toString()));
 	// on rafraichit la liste
 	rafraichir_liste();	
+	AffichageResultat.setText("");
 }
 
 public void modifier_element(EditText valeur,int index)
 {
 	tableau.set(index, Float.valueOf(valeur.getText().toString()));
 	rafraichir_liste();
+	AffichageResultat.setText("");
 }
 
 public void supprimer_liste()
 {
 	tableau.clear();	
+	AffichageResultat.setText("");
 }
 
 public void supprimer_element(int index)
 {
 	tableau.remove(index);
 	rafraichir_liste();
+	AffichageResultat.setText("");
 }
 
 
@@ -260,15 +264,14 @@ public void afficher_graph()
 
 public void affichage()
 {
-	String test="Valeur"+"		"+"|"+"		"+"Fréquence\n";
+	String test=String.format("Valeur 		  |		 Fréquence\n");
+	
 	for(int j=0;j < valeur.size();j++)
 	{
-		
-		test+=valeur.get(j).toString()+"		"+"|"+"		"+freq.get(j).intValue()+"/"+tableau.size()+"\n";
-		
+		test+=String.format("%12s | %d/%d\n" , valeur.get(j).toString(), freq.get(j).intValue(), tableau.size() ) ;
 	}
 	AffichageResultat.setText(test);
-	//Toast.makeText(this, test, Toast.LENGTH_LONG).show();
+	
 }
 
 //fonction permettant de savoir si une valeur est déja présente dans le tableau de frequence
